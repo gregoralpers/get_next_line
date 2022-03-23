@@ -1,0 +1,65 @@
+#include "get_next_line_bonus.h"
+
+size_t	ft_strlen(const char *str)
+{
+	unsigned int	i;
+
+	i = 0;
+	if (str == NULL)
+		return (0);
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	if (s == NULL)
+		return (NULL);
+	while (s[i] != '\0')
+	{
+		if (s[i] == (char)c)
+			return ((char *)s + i);
+		i++;
+	}
+	if (c == '\0')
+		return ((char *)s + i);
+	return (NULL);
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+
+{
+	char			*new;
+	unsigned int	i;
+	unsigned int	j;
+
+	if (s1 == NULL)
+	{
+		s1 = (char *)malloc(sizeof(char));
+		s1[0] = '\0';
+	}
+	if (s2 == NULL || s1 == NULL)
+		return (NULL);
+	new = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (new == NULL)
+		return (NULL);
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		new[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		new[i + j] = s2[j];
+		j++;
+	}
+	new[i + j] = '\0';
+	free(s1);
+	return (new);
+}
