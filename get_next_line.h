@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: galpers <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: galpers <galpers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:49:30 by galpers           #+#    #+#             */
-/*   Updated: 2022/03/23 14:43:37 by galpers          ###   ########.fr       */
+/*   Updated: 2022/03/28 12:02:07 by galpers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 char	*get_next_line(int fd);
 char	*ft_strchr(const char *s, int c);
-size_t  ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 char	*ft_strjoin(char *s1, char *s2);
 
 #endif

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: galpers <galpers@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 11:47:46 by galpers           #+#    #+#             */
+/*   Updated: 2022/03/28 11:55:16 by galpers          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *str)
@@ -31,7 +43,6 @@ char	*ft_strchr(const char *s, int c)
 }
 
 char	*ft_strjoin(char *s1, char *s2)
-
 {
 	char			*new;
 	unsigned int	i;
@@ -47,18 +58,12 @@ char	*ft_strjoin(char *s1, char *s2)
 	new = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (new == NULL)
 		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
-	{
+	i = -1;
+	while (s1[++i] != '\0')
 		new[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (s2[j] != '\0')
-	{
+	j = -1;
+	while (s2[++j] != '\0')
 		new[i + j] = s2[j];
-		j++;
-	}
 	new[i + j] = '\0';
 	free(s1);
 	return (new);

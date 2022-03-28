@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: galpers <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: galpers <galpers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:51:09 by galpers           #+#    #+#             */
-/*   Updated: 2022/03/23 15:07:46 by galpers          ###   ########.fr       */
+/*   Updated: 2022/03/28 11:56:03 by galpers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,13 @@ char	*ft_strjoin(char *s1, char *s2)
 	new = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (new == NULL)
 		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
-	{
+	i = -1;
+	while (s1[++i] != '\0')
 		new[i] = s1[i];
 		i++;
-	}
-	j = 0;
-	while (s2[j] != '\0')
-	{
+	j = -1;
+	while (s2[++j] != '\0')
 		new[i + j] = s2[j];
-		j++;
-	}
 	new[i + j] = '\0';
 	free(s1);
 	return (new);
