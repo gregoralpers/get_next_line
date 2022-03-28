@@ -6,7 +6,7 @@
 /*   By: galpers <galpers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:47:46 by galpers           #+#    #+#             */
-/*   Updated: 2022/03/28 11:55:16 by galpers          ###   ########.fr       */
+/*   Updated: 2022/03/28 12:07:30 by galpers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ char	*ft_strchr(const char *s, int c)
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char			*new;
-	unsigned int	i;
-	unsigned int	j;
+	int				i;
+	int				j;
 
 	if (s1 == NULL)
 	{

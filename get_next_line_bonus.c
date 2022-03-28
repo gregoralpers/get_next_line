@@ -6,7 +6,7 @@
 /*   By: galpers <galpers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 15:41:48 by galpers           #+#    #+#             */
-/*   Updated: 2022/03/28 11:47:30 by galpers          ###   ########.fr       */
+/*   Updated: 2022/03/28 12:15:40 by galpers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,25 @@ void	read_file_buffer(char *str[], int fd)
 	if (buffer == NULL)
 		return ;
 		r_value = -1;
-		while (!ft_strchr(str[fd], '\n') && r_value != 0)
-		∏{
-			r_value = read(fd, buffer, BUFFER_SIZE);
-			if (r_value == -1)
-			{              
-				free(buffer);
-				str[fd] = NULL;
-				return ;
-			}
-			buffer[r_value] = '\0';
-			str[fd] = ft_strjoin(str[fd], buffer);
+	while (!ft_strchr(str[fd], '\n') && r_value != 0)
+	{
+		r_value = read(fd, buffer, BUFFER_SIZE);
+		if (r_value == -1)
+		{
+			free(buffer);
+			str[fd] = NULL;
+			return ;
 		}
-	free(buffer);   
+		buffer[r_value] = '\0';
+		str[fd] = ft_strjoin(str[fd], buffer);
+	}
+	free(buffer);
 }
 
-char    *get_line(char *str)
+char	*get_line(char *str)
 {
-	char    *result;
-	int     i;
+	char	*result;
+	int		i;
 
 	i = 0;
 	if (ft_strlen(str) == 0)
@@ -55,14 +55,14 @@ char    *get_line(char *str)
 		result[i] = str[i];
 		i--;
 	}
-	return (result);    
+	return (result);
 }
 
-void   remove_line(char *str[], int fd)
+void	remove_line(char *str[], int fd)
 {
-	char    *new;
-	int     i;
-	int     j;
+	char	*new;
+	int		i;
+	int		j;
 
 	i = 0;
 	while (str[fd][i] != '\0' && str[fd][i] != '\n')
@@ -76,7 +76,7 @@ void   remove_line(char *str[], int fd)
 	new = (char *)malloc(sizeof(char) * (ft_strlen(str[fd]) + 1 - i++));
 	if (new == NULL)
 		return ;
-	new[ft_strlen(str[fd]) - i] ='\0';
+	new[ft_strlen(str[fd]) - i] = '\0';
 	j = 0;
 	while (str[fd][j + i] != '\0')
 	{
@@ -89,8 +89,8 @@ void   remove_line(char *str[], int fd)
 
 char	*get_next_line(int fd)
 {
-	static char *str[1024];
-	char        *result;
+	static char	*str[1024];
+	char		*result;
 
 	if (fd < 0 || BUFFER_SIZE < 0)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: galpers <galpers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:51:09 by galpers           #+#    #+#             */
-/*   Updated: 2022/03/28 11:56:03 by galpers          ###   ########.fr       */
+/*   Updated: 2022/03/28 12:08:27 by galpers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ char	*ft_strjoin(char *s1, char *s2)
 
 {
 	char			*new;
-	unsigned int	i;
-	unsigned int	j;
+	int				i;
+	int				j;
 
 	if (s1 == NULL)
 	{
@@ -62,7 +62,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	i = -1;
 	while (s1[++i] != '\0')
 		new[i] = s1[i];
-		i++;
 	j = -1;
 	while (s2[++j] != '\0')
 		new[i + j] = s2[j];
